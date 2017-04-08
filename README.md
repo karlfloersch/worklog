@@ -1,12 +1,8 @@
-# Worklog
+# Worklog / Tasklist
 
-If you're not already...
+If you aren't already...
 
-#### Click here to view on GitBook
-
-
+### [Click here to view on GitBook](https://karlfloersch.gitbooks.io/worklog/content/)
 
 It's a pretty-er format 🙂
-
-
 
