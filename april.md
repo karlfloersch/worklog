@@ -1,3 +1,32 @@
+## April 11th
+
+* [x] Look into V's alternate scheme for verifying that prepares are sent while the validator is logged in
+* [x] Test to see if `call_casper` works in the old repo
+
+* It works and returns exactly what I'm looking for
+
+* [x] ~~Try the old `call_casper` in Python3 and see if it works~~ -- This is taking way too long, and doesn't seem to be worth the effort
+* [x] Ujo call
+
+* After trying a bunch of stuff, it seems that I might have to finalize the block before I can make the transactions that I need.
+
+* [x] Figure out the relationship between `State` and `Chain` 
+
+* State
+  * Manages the Ethereum Merkle-Paricia-Trie 
+  * Provides the ability to get & set values
+    * `nonce`, `code`, `bytes`
+  * Implements a cache which is used for storage & getting until you call `commit` to commit it to the DB
+* Chain
+  * Maintains a state object
+  * Scores the block header hashes
+    * Stores transactions by hash
+    * Stores the transaction scores with `score:[block.header.hash] -> score`
+  * Shares the `db` with it's state object
+    * Snapshots can be reconstructed with this db given a specific `state_root` \(`merkle root`\)
+
+* [ ] Try finishing the block and then making the call OR try debugging the `Not enough data for head` error
+
 ## April 10th
 
 * [x] Determine focus for the day \[Focus: Add basic fork scoring rules\]
@@ -9,11 +38,15 @@
 * [x] Verify that the Casper contract is deployed when using `call_casper()`
 
 * Notes on my findings
+
   * `apply_transaction` uses `apply_message`, and a major difference between the two seems to be that `apply-message` doesn't reduce the balance of the sender
+
 * Potential areas to explore
+
   * Try running the Casper contract 
 
 * [ ] Get the epoch\_length from the Casper contract, to be used to determine the current epoch from the validator's perspective
+
 * [ ] Call `initialize_epoch()` at the start of every new epoch
 
 ## April 9th
