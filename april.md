@@ -1,3 +1,29 @@
+## April 13th
+
+* [x] Fix the `ethereum1_check_header` error
+
+* It turns out the issue was I wasn't mining the block
+
+* [x] Add Ujo tasks to PT
+* [x] Ujo call
+* [x] Mine the block before continuing the chain -- result: the mining worked; however, when trying to add transactions it didn't :'\( 
+* [x] Helped Gael with his bug
+* [x] Get mining empty blocks working
+* [x] Fix broken tests in `test_chain.py` 
+
+* Pushed up a new branch which has the changes: https://github.com/karlfloersch/pyethereum/tree/state\_revamp\_python3\_chain\_tests 
+
+## April 12th
+
+* [x] Compare the state before and after applying a transaction which alters the state--result: no change was made
+* [x] Compare the state before & after running `casper_contract_bootstrap()` -- result: seems to have actually changed the state! This is super exciting! :D
+* [x] Try using testing instead of `initiate()` for the bootstrap -- result: testing also changes the state!
+* [x] Try committing without calling anything \(maybe that is what's really happening\) -- result: turns out the only changes to the state were from the commit, which suggests it's from the call to `initialize()` which sets the Casper code. The transactions are still not working
+* [x] Test creating blocks and applying the transactions
+* [x] Ujo Call
+* [x] Architecture call
+* [x] Create second block to build on the chain -- result: this caused an error with `ethereum1_check_header` failing
+
 ## April 11th
 
 * [x] Look into V's alternate scheme for verifying that prepares are sent while the validator is logged in
@@ -5,19 +31,23 @@
 
 * It works and returns exactly what I'm looking for
 
-* [x] ~~Try the old `call_casper` in Python3 and see if it works~~ -- This is taking way too long, and doesn't seem to be worth the effort
+* [x] ~~Try the old ~~`call_casper`~~ in Python3 and see if it works~~ -- This is taking way too long, and doesn't seem to be worth the effort
+
 * [x] Ujo call
 
 * After trying a bunch of stuff, it seems that I might have to finalize the block before I can make the transactions that I need.
 
-* [x] Figure out the relationship between `State` and `Chain` 
+* [x] Figure out the relationship between `State` and `Chain`
 
 * State
+
   * Manages the Ethereum Merkle-Paricia-Trie 
   * Provides the ability to get & set values
     * `nonce`, `code`, `bytes`
   * Implements a cache which is used for storage & getting until you call `commit` to commit it to the DB
+
 * Chain
+
   * Maintains a state object
   * Scores the block header hashes
     * Stores transactions by hash
