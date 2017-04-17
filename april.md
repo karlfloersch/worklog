@@ -1,3 +1,22 @@
+## April 16th
+
+* [x] Initialize the new `casper` repository
+* [x] Determine repository structure
+
+* Created two directories, `contracts` and `daemon` which can be imported and used either as libraries or as a cli
+
+* [x] Merge V's commits
+* [x] Push! \( github.com/ethereum/casper \)
+
+## April 15th
+
+* [x] Tests `apply_msg` in Python2.7 -- result: it still has the issue
+
+## April 14th
+
+* [x] Submit Python3 `chain.y` compatibility PR \(https://github.com/ethereum/pyethereum/pull/710\)
+* [x] Begin VM tests with Python2 & Python3
+
 ## April 13th
 
 * [x] Fix the `ethereum1_check_header` error
@@ -5,13 +24,14 @@
 * It turns out the issue was I wasn't mining the block
 
 * [x] Add Ujo tasks to PT
+
 * [x] Ujo call
 * [x] Mine the block before continuing the chain -- result: the mining worked; however, when trying to add transactions it didn't :'\( 
 * [x] Helped Gael with his bug
 * [x] Get mining empty blocks working
-* [x] Fix broken tests in `test_chain.py` 
+* [x] Fix broken tests in `test_chain.py`
 
-* Pushed up a new branch which has the changes: https://github.com/karlfloersch/pyethereum/tree/state\_revamp\_python3\_chain\_tests 
+* Pushed up a new branch which has the changes: [https://github.com/karlfloersch/pyethereum/tree/state\_revamp\_python3\_chain\_tests](https://github.com/karlfloersch/pyethereum/tree/state_revamp_python3_chain_tests)
 
 ## April 12th
 
@@ -31,7 +51,7 @@
 
 * It works and returns exactly what I'm looking for
 
-* [x] ~~Try the old ~~`call_casper`~~ in Python3 and see if it works~~ -- This is taking way too long, and doesn't seem to be worth the effort
+* [x] ~~Try the old ~~~~`call_casper` in Python3 and see if it works~~ -- This is taking way too long, and doesn't seem to be worth the effort
 
 * [x] Ujo call
 
