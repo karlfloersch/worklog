@@ -1,3 +1,12 @@
+## April 17th
+
+* [x] Ujo call
+* [x] Casper standup call
+* [x] Go to Consensys office
+* [x] Fix Python3 support for `chain.py` PR by removing the dependency on future https://github.com/ethereum/pyethereum/pull/710
+* [x] Fix a bunch of Ujo bugs
+* [x] Met Meher Roy and began discussing super cool & top secret plans :\) 
+
 ## April 16th
 
 * [x] Initialize the new `casper` repository
@@ -6,6 +15,7 @@
 * Created two directories, `contracts` and `daemon` which can be imported and used either as libraries or as a cli
 
 * [x] Merge V's commits
+
 * [x] Push! \( github.com/ethereum/casper \)
 
 ## April 15th
@@ -14,7 +24,7 @@
 
 ## April 14th
 
-* [x] Submit Python3 `chain.y` compatibility PR \(https://github.com/ethereum/pyethereum/pull/710\)
+* [x] Submit Python3 `chain.y` compatibility PR \([https://github.com/ethereum/pyethereum/pull/710\](https://github.com/ethereum/pyethereum/pull/710\)\)
 * [x] Begin VM tests with Python2 & Python3
 
 ## April 13th
@@ -26,6 +36,7 @@
 * [x] Add Ujo tasks to PT
 
 * [x] Ujo call
+
 * [x] Mine the block before continuing the chain -- result: the mining worked; however, when trying to add transactions it didn't :'\( 
 * [x] Helped Gael with his bug
 * [x] Get mining empty blocks working
