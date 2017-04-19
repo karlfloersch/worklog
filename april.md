@@ -1,11 +1,31 @@
+## April 18th
+
+* [x] Set focus
+* [x] Update local Pyethereum to reflect yesterday's changes
+* [x] Create Consensus Protocols working group
+* [x] Ujo call
+* [ ] ~~Revamp the stupid `casper_utils.py` because let's be real, it sucks~~
+
+* Alternate approach
+  * Instead of using the casper utils, I am going to instead try to isolate the functionality which needs to be added to `chain.py` and the miner and just use the Ethereum tester
+  * This will be faster and should solve my horrible bug
+  * \[PROBLEM\] - The tester doesn't mine blocks or have a concept of a chain. I feel like fixing the bug might be less work than figuring out how to use the tester with the miner and chain :\(
+
+* [x] Help debug a wallet issue
+* [x] Create `inject_casper_constracts` which primes the state for Casper
+* [x] Rebuild the entire `casper_utils` and testing file in order to fix the bug.... -- result: got the exact same result
+* [x] Replace `set_code()` with a normal create contract transaction \(should have done this long ago\)
+* [x] Fix out of gas error
+* [x] **Finally fix the bug!!!!!! **
+
 ## April 17th
 
 * [x] Ujo call
 * [x] Casper standup call
 * [x] Go to Consensys office
-* [x] Fix Python3 support for `chain.py` PR by removing the dependency on future https://github.com/ethereum/pyethereum/pull/710
+* [x] Fix Python3 support for `chain.py` PR by removing the dependency on future [https://github.com/ethereum/pyethereum/pull/710](https://github.com/ethereum/pyethereum/pull/710)
 * [x] Fix a bunch of Ujo bugs
-* [x] Met Meher Roy and began discussing super cool & top secret plans :\) 
+* [x] Meet Meher Roy and begin discussing super cool & top secret plans :\) 
 
 ## April 16th
 
@@ -24,7 +44,7 @@
 
 ## April 14th
 
-* [x] Submit Python3 `chain.y` compatibility PR \([https://github.com/ethereum/pyethereum/pull/710\](https://github.com/ethereum/pyethereum/pull/710\)\)
+* [x] Submit Python3 `chain.y` compatibility PR \([https://github.com/ethereum/pyethereum/pull/710\](https://github.com/ethereum/pyethereum/pull/710%29\)
 * [x] Begin VM tests with Python2 & Python3
 
 ## April 13th
@@ -37,7 +57,8 @@
 
 * [x] Ujo call
 
-* [x] Mine the block before continuing the chain -- result: the mining worked; however, when trying to add transactions it didn't :'\( 
+* [x] Mine the block before continuing the chain -- result: the mining worked; however, when trying to add transactions it didn't :'\(
+
 * [x] Helped Gael with his bug
 * [x] Get mining empty blocks working
 * [x] Fix broken tests in `test_chain.py`
