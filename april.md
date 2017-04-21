@@ -1,17 +1,41 @@
+## April 20th
+
+* [x] Add `get_transaction` for getting Casper transactions instead of immediately applying them
+* [x] Ujo call
+* [x] Ujo strategy call
+* [x] Add `state_initialize` which can initialize epochs 
+* [x] Generate a genesis which changes the consensus strategy
+* [x] Refactor & commit
+* [x] Figure out where the miner should go / if it should just be called  ta 'validator' & spec it out
+* [ ] ~~Implement `validator_utils.py` as defined~~
+
+* Ended up deciding it makes sense to, on paper, come up with a test suite which will allow me to avoid using a shotgun simulation approach
+
+## April 19th
+
+* [x] Ujo call
+* [x] Add `call_casper`
+* [x] Add block initialization logic
+* [x] Debug issue with IPFS
+
+\[my worklog was lost for this day so this is all I can remember\]
+
 ## April 18th
 
 * [x] Set focus
 * [x] Update local Pyethereum to reflect yesterday's changes
 * [x] Create Consensus Protocols working group
 * [x] Ujo call
-* [ ] ~~Revamp the stupid `casper_utils.py` because let's be real, it sucks~~
+* [ ] ~~Revamp the stupid ~~`casper_utils.py`~~ because let's be real, it sucks~~
 
 * Alternate approach
+
   * Instead of using the casper utils, I am going to instead try to isolate the functionality which needs to be added to `chain.py` and the miner and just use the Ethereum tester
   * This will be faster and should solve my horrible bug
   * \[PROBLEM\] - The tester doesn't mine blocks or have a concept of a chain. I feel like fixing the bug might be less work than figuring out how to use the tester with the miner and chain :\(
 
 * [x] Help debug a wallet issue
+
 * [x] Create `inject_casper_constracts` which primes the state for Casper
 * [x] Rebuild the entire `casper_utils` and testing file in order to fix the bug.... -- result: got the exact same result
 * [x] Replace `set_code()` with a normal create contract transaction \(should have done this long ago\)
@@ -60,6 +84,7 @@
 * [x] Mine the block before continuing the chain -- result: the mining worked; however, when trying to add transactions it didn't :'\(
 
 * [x] Helped Gael with his bug
+
 * [x] Get mining empty blocks working
 * [x] Fix broken tests in `test_chain.py`
 
