@@ -1,14 +1,38 @@
+## April 24th
+
+* [x] Figure out which fork choice rules implementation to use
+* [ ] Fix Python3 comparison bug with TransactionQueue
+* [ ] Add testbed with multiple validators 
+
+## April 23rd
+
+* [x] Figure out how the fork choice rule should work
+
+* Multiple options
+  * Keep `preapres` and `commits` in state outside of contract
+  * Keep them directly in the contract
+
+* [x] Store prepares and commits
+
+\[more but I lost them just like the day before\]
+
+## April 22nd
+
+\[again I lost my records because I hadn't saved and Chrome crashed :\( \]
+
 ## April 21st
 
 * [x] Ujo sprint review
 * [x] Finish coming up with cases to test
 
 * Testing approach
+
   * First, implement the basic commit counting logic
     * \[NON-DYNASTY TEST\]: create multiple branches of PREPAREs. Then send one commit on one branch, the chain should set that epoch as HEAD. Next send a commit on a 2nd branch, no change. Next send a 2nd commit to 2nd branch, and HEAD should switch. After that send the 3rd commit and we should be finalized
     * \[DYNASTY TEST\] same as above except now we are counting not just validators for the current dynasty & we are authenticating the prepares / commits
 
 * [x] Write out the fork choice rule and come up with different properties that should hold
+
 * [x] Add a prepare message
 
 * This caused an annoying to debug OOG error
@@ -18,6 +42,7 @@
 * I discovered this by looking into `vm.py` and printing out the particular OOG error. I noticed that it had to do with an `if` statement which was checking if the spam attack hardfork was added. I realized that this must be an OOG error that was caused by V using only the exact amount of gas needed for one of his library contracts \(`sig_hasher()`\). I realized this was an issue with my configuration, not specifying that I am past that fork
 
 * [x] Create `make-casper-genesis()` which initializes the proper state
+
 * [x] Refactor `test_casper()` to use the new genesis
 * [x] Commit & sleep &lt;3 
 
@@ -30,7 +55,7 @@
 * [x] Generate a genesis which changes the consensus strategy
 * [x] Refactor & commit
 * [x] Figure out where the miner should go / if it should just be called  ta 'validator' & spec it out
-* [ ] ~~Implement ~~`validator_utils.py`~~ as defined~~
+* [ ] ~~Implement ~~~~`validator_utils.py` as defined~~
 
 * Ended up deciding it makes sense to, on paper, come up with a test suite which will allow me to avoid using a shotgun simulation approach
 
@@ -62,6 +87,7 @@
 * [x] Create `inject_casper_constracts` which primes the state for Casper
 
 * [x] Rebuild the entire `casper_utils` and testing file in order to fix the bug.... -- result: got the exact same result
+
 * [x] Replace `set_code()` with a normal create contract transaction \(should have done this long ago\)
 * [x] Fix out of gas error
 * [x] **Finally fix the bug!!!!!! **
