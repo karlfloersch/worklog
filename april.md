@@ -1,14 +1,43 @@
+## April 25th
+
+* [x] Create multiple validators which all submit prepares & commits
+* [x] Fix sighash bug
+* [x] Fix dynasty bug
+* [ ] Fix blockhash bug
+
+* Seems to be an issue with the Viper compiler?
+
+* [x] Clean up and commit
+* [ ] Brainstorm ideas for what I should test
+
+* Start with observing commit finalization?
+  * I could add logic in `chain.py` that no matter how long a chain is, if it is aware of a finalized commit, it will not change HEAD
+* Figure out how best to add blocks and competing forks before any of this will be possible
+
+* [x] Mine a competing chain which is before a finalized block, and watch head switch to that one
+* [x] Submit PR for bug I noticed which incorrectly punishes validators
+* [x] Store the commits in a format which can be later used to reconstruct the complete known checkpoint state
+* [x] Help V debug the Viper `blockhash` bug
+* [x] Submit PR which adds Python3 compatibility to `state_transition.py`
+
 ## April 24th
 
 * [x] Figure out which fork choice rules implementation to use
-* [ ] Fix Python3 comparison bug with TransactionQueue
-* [ ] Add testbed with multiple validators 
+* [x] Fix Python3 comparison bug with TransactionQueue
+* [x] Commit
+* [x] Add testbed with multiple validators 
+* [ ] Set up testbed to show the simplest fork choice decision
+
+* Start with 5 validators
+* Have all 5 prepare `epoch 4` and 4/5 prepare on `epoch 5` , both pointing to `epoch 3`
+* First, one validator commits on `epoch 4` , next two validators commit on `epoch 5`. The head should move from `epoch 4` to `epoch 5` 
 
 ## April 23rd
 
 * [x] Figure out how the fork choice rule should work
 
 * Multiple options
+
   * Keep `preapres` and `commits` in state outside of contract
   * Keep them directly in the contract
 
@@ -44,6 +73,7 @@
 * [x] Create `make-casper-genesis()` which initializes the proper state
 
 * [x] Refactor `test_casper()` to use the new genesis
+
 * [x] Commit & sleep &lt;3 
 
 ## April 20th
@@ -89,6 +119,7 @@
 * [x] Rebuild the entire `casper_utils` and testing file in order to fix the bug.... -- result: got the exact same result
 
 * [x] Replace `set_code()` with a normal create contract transaction \(should have done this long ago\)
+
 * [x] Fix out of gas error
 * [x] **Finally fix the bug!!!!!! **
 
