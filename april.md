@@ -1,3 +1,16 @@
+## April 27th
+
+* [x] Ujo call
+* [x] Interview new candidate
+* [x] Finish fork choice logic! I believe it's right
+
+## April 26th
+
+* [x] Interview new Ujo candidate
+* [x] Get the track validation working for Ujo
+* [x] Check blockhash for block rewards
+* [ ] Check if a chain does not include a known....
+
 ## April 25th
 
 * [x] Create multiple validators which all submit prepares & commits
@@ -20,6 +33,7 @@
 * [x] Mine a competing chain which is before a finalized block, and watch head switch to that one
 
 * [x] Submit PR for bug I noticed which incorrectly punishes validators
+
 * [x] Store the commits in a format which can be later used to reconstruct the complete known checkpoint state
 * [x] Help V debug the Viper `blockhash` bug
 * [x] Submit PR which adds Python3 compatibility to `state_transition.py`
@@ -35,6 +49,7 @@
 * Start with 5 validators
 
 * Have all 5 prepare `epoch 4` and 4/5 prepare on `epoch 5` , both pointing to `epoch 3`
+
 * First, one validator commits on `epoch 4` , next two validators commit on `epoch 5`. The head should move from `epoch 4` to `epoch 5` 
 
 ## April 23rd
@@ -263,4 +278,6 @@
 ## April 8th
 
 * [x] Get Gitbook setup for the brand new worklog!
+
+
 
